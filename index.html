@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>
+    Free Games | Download A Free PC Game Every Week - Epic Games Store
+  </title>
+  <link rel="stylesheet" href="./fontawesome-free-6.1.2-web/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="header-nav">
+      <a class="logo-wrapper" href="">
+        <img class="logo" src="emLogo.png" alt="Epic Games Logo">
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle">
+        <div class="one" id="one"></div>
+        <div class="two" id="two"></div>
+        <div class="three" id="three"></div>
+      </button>
+
+      <div class="pop-in" id="pop-in">
+        <ul id="rightNavigation">
+          <li>
+            <a href="">STORE</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+          <li>
+            <a href="">HELP</a>
+          </li>
+          <li>
+            <a href="">UNREAL ENGINE</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="backdrop3 backdrop-group" id="backdrop3"></div>
+      <div class="backdrop backdrop-group" id="backdrop"></div>
+    </nav>
+    <nav class="right-nav" id="right-nav">
+      <div class="sign-language-container">
+        <div class="user" id="user">
+          <a href="">
+            <img src="user-icon.png" />
+            SIGN IN
+          </a>
+        </div>
+        <button class="language-icon" id="language-icon">
+          <img src="planet-img.png" />
+        </button>
+      </div>
+
+      <div class="download-btn" id="download-btn">
+        <a href="">DOWNLOAD</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="sticky-div">
+      <button class="discover-btn" id="discover-btn">
+        <a id="btn-text">Discover</a>
+        <i class="fa-solid fa-angle-down" id="arrow-down"></i>
+      </button>
+      <ul class="discover-ul" id="discover-ul">
+        <li id="ej">Discover</li>
+        <li>Browse</li>
+        <li>News</li>
+      </ul>
+      <div class="backdrop2 backdrop-group" id="backdrop2"></div>
+      <img src=" lupa1.png" class="search-icon" id="search-icon" />
+      <div class="search-div" id="search-div">
+        <input type="text" placeholder="Search store" />
+        <img src="x-icon.png" class="x-icon" id="x-icon" />
+      </div>
+    </div>
+
+    <section class="section1">
+      <p class="playmore">PLAY MORE</p>
+      <h2 class="h2">Free Games</h2>
+      <p class="h2-description">
+        Epic Games Store gives you a free game every week. Come back often for
+        the exclusive offers. Download a free game to play or join a
+        free-to-play game community today.
+      </p>
+      <div class="section1-games">
+        <div class="section1-1game" id="section1-1game">
+          <img src="naraka.jpg" />
+          <p class="section1-1game-title">
+            NARAKA: BLADE POINT - Free Weekend
+          </p>
+          <p class="section1-1game-description">
+            Danger comes in all forms. Claim your victory in NARAKA:
+            BLADE POINT's new map Hot in the free weekend event!
+          </p>
+          <a class="section1-1game-link">Learn More</a>
+        </div>
+        <div class="section1-2game" id="section1-2game">
+          <img src="unrailed-game.jpg" />
+          <p class="section1-2game-title">
+            NARAKA: BLADE POINT - Free Weekend
+          </p>
+          <p class="section1-2game-description">
+            Danger comes in all forms. Claim your victory in NARAKA:
+            BLADE POINT's new map Hot in the free weekend event!
+          </p>
+          <a class="section1-2game-link">Free</a>
+        </div>
+        <img src="tacka.png" class="doth1" id="doth1" />
+        <img src="tacka.png" class="doth2" id="doth2" />
+      </div>
+    </section>
+
+    <section class="section2">
+      <a href="" class="section2-1game">
+        <div class="section2-1game-image-container">
+          <img src="doom.jpg" />
+          <p class="section2-1game-free">FREE NOW</p>
+        </div>
+        <p class="section2-1game-title">DOOM 64</p>
+        <p class="section2-1game-description">
+          Free Now - Aug 25 at 05:00 PM
+        </p>
+      </a>
+      <a class="section2-2game">
+        <div class="section2-2game-image-container">
+          <img src="Rumbleverse.jpg" />
+          <p class="section2-2game-free">FREE NOW</p>
+        </div>
+        <p class="section2-2game-title">
+          Rumble verse - Boom Boxer Content Pack
+        </p>
+        <p class="section2-2game-description">
+          Free Now - Aug 25 at 05:00 PM
+        </p>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var boolean = false;
+      var discoverUl = document.getElementById("discover-ul");
+      var arrowDown = document.getElementById("arrow-down");
+      var backdrop = document.getElementById("backdrop");
+      var stickyOverlay = document.getElementById("backdrop2");
+      var searchDiv = document.getElementById("search-div");
+      var discoverBtn = document.getElementById('discover-btn');
+
+      discoverBtn.addEventListener('click', function () {
+        if (boolean === false) {
+          discoverUl.style.display = "block";
+          arrowDown.style.transform = "rotate(180deg)";
+          stickyOverlay.style.display = "block";
+          boolean = true;
+        } else {
+          discoverUl.style.display = "none";
+          arrowDown.style.transform = "rotate(0deg)";
+          stickyOverlay.style.display = "none";
+          boolean = false;
+        }
+      });
+
+      var backdropGroup = document.querySelectorAll('.backdrop-group');
+
+      for (var i = 0; i < backdropGroup.length; i++) {
+        backdropGroup[i].addEventListener('click', function () {
+          discoverUl.style.display = "none";
+          arrowDown.style.transform = "rotate(0deg)";
+          searchDiv.style.display = "none";
+          rightNavigation.style.left = "100%";
+          downloadBtn.style.left = "100%";
+          user.style.left = "100%";
+          languageIcon.style.left = "100%";
+          one.style.display = "block";
+          two.style.transform = "rotate(0deg)";
+          two.style.marginTop = "0px";
+          three.style.transform = "rotate(0deg)";
+          three.style.marginTop = "0px";
+          wrapper.style.backgroundColor = "#0078f2";
+          backdrop.style.display = "none";
+          stickyOverlay.style.display = "none";
+          boolean = false;
+          boolean2 = false;
+        });
+      }
+
+      var searchIcon = document.getElementById('search-icon');
+
+      searchIcon.addEventListener('click', function () {
+        searchDiv.style.display = "flex";
+        stickyOverlay.style.display = "block";
+      });
+
+      var xIcon = document.getElementById('x-icon');
+
+      xIcon.addEventListener('click', function () {
+        searchDiv.style.display = "none";
+        stickyOverlay.style.display = "none";
+      });
+
+      var section11Game = document.getElementById("section1-1game");
+      var section12Game = document.getElementById("section1-2game");
+      var doth1 = document.getElementById("doth1");
+      var doth2 = document.getElementById("doth2");
+
+      doth2.addEventListener('click', function () {
+        section11Game.style.position = "relative";
+        section11Game.style.left = "-50%";
+        section12Game.style.position = "relative";
+        section12Game.style.left = "-51%";
+        doth1.style.opacity = "0.3";
+        doth2.style.opacity = "1";
+      });
+
+      doth1.addEventListener('click', function () {
+        section11Game.style.position = "relative";
+        section11Game.style.left = "0%";
+        section12Game.style.position = "relative";
+        section12Game.style.left = "0%";
+        doth1.style.opacity = "1";
+        doth2.style.opacity = "0.3";
+      });
+
+      var one = document.getElementById("one");
+      var two = document.getElementById("two");
+      var three = document.getElementById("three");
+      var wrapper = document.getElementById("menu-toggle");
+      var boolean2 = false;
+      var rightNavigation = document.getElementById("rightNavigation");
+      var downloadBtn = document.getElementById("download-btn");
+      var user = document.getElementById("user");
+      var languageIcon = document.getElementById("language-icon");
+      var backdrop3 = document.getElementById('backdrop3');
+
+      backdrop3.addEventListener('click', function () {
+        backdrop3.style.display = 'none';
+        popIn.style.left = '100vw';
+        rightNav.style.left = '100vw';
+        popInBoolean = false;
+      });
+
+      function toggleMenu() {
+        console.log('test');
+        if (boolean2 === false) {
+          rightNavigation.style.left = "10%";
+          downloadBtn.style.left = "10%";
+          user.style.left = "10%";
+          languageIcon.style.left = "68%";
+          one.style.display = "none";
+          two.style.transform = "rotate(45deg)";
+          three.style.transform = "rotate(135deg)";
+          three.style.marginTop = "-8px";
+          wrapper.style.backgroundColor = "#252525";
+          backdrop.style.display = "none";
+          backdrop3.style.display = 'block';
+          boolean2 = true;
+        } else {
+          rightNavigation.style.left = "100%";
+          downloadBtn.style.left = "100%";
+          user.style.left = "100%";
+          languageIcon.style.left = "100%";
+          one.style.display = "block";
+          two.style.transform = "rotate(0deg)";
+          two.style.marginTop = "0px";
+          three.style.transform = "rotate(0deg)";
+          three.style.marginTop = "0px";
+          wrapper.style.backgroundColor = "#0078f2";
+          backdrop.style.display = "none";
+          backdrop3.style.display = 'none';
+          backdrop2.style.display = 'none';
+          boolean2 = false;
+        }
+      }
+
+      var popInButton = document.getElementById('menu-toggle');
+      var popIn = document.getElementById('pop-in');
+      var rightNav = document.getElementById('right-nav');
+      var popInBoolean = false;
+
+      popInButton.addEventListener('click', function () {
+        toggleMenu();
+        if (popInBoolean === false) {
+          popIn.style.left = '10vw';
+          rightNav.style.left = '10vw';
+          popInBoolean = true;
+        } else {
+          popIn.style.left = '100vw';
+          rightNav.style.left = '100vw';
+          popInBoolean = false;
+        }
+      });
+
+    })();
+  </script>
+</body>
+
+</html>
